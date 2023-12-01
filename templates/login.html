@@ -28,6 +28,9 @@
 				<div class="login-reg-bg">
 					<div class="log-reg-area sign">
 						<h2 class="log-title">Login</h2>
+						{% for message in messages %}
+							<h4 class="widget-title">Who's follownig</h4>
+						{% endfor %}
 						<form method="post">
 							{% csrf_token %}
 							<!-- username -->
@@ -44,7 +47,7 @@
 							
 							<!-- button -->
 							<div class="submit-btns">
-                                <button class="mtr-btn signup"  type="button"><span>Login</span></button>
+                                <button class="mtr-btn signup"  type="submit"><span>Login</span></button>
                                 <br>
                                 <p>Don't have an account? <a href="/register">Click here.</a></p>
 							</div>

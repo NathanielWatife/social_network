@@ -20,3 +20,9 @@ sudo apt install python3-venv -y
 python3 -m venv env
 ###### now install django
 pip install django
+```
+
+# Steps into the network site
+    ## Get the Url
+    ## Signin or Register
+    ## 
