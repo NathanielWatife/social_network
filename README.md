@@ -11,7 +11,7 @@
 
 To clone these repo you need to install the following:
  - Python3 to latest version.
- - Create an environment
+ - Create a virtual environment
  - Django version 4 to the latest.
 
 ```bash
