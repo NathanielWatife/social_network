@@ -25,4 +25,3 @@ pip install django
 # Steps into the network site
     ## Get the Url
     ## Signin or Register
-    ## 

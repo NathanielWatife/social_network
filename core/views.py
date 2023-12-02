@@ -29,15 +29,30 @@ def register(request):
             messages.info(request, "No match for Password")
             return redirect('register')
 
-            # create a new user profile for the user new user
-            user_model = User.objects.create(username=username)
-            new_profile = Profile.objects.get(user=username, id_user=user_model.id)
-            new_profile.save()
-            return redirect('/') 
+        # create a new user profile for the user new user
+        user_model = User.objects.get(username=username)
+        new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
+        new_profile.save()
+        return redirect('/') 
             
             
     else:
         return render(request, "register.html")
 
 def login(request):
-    return render(request, "login.html")
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        # Check if the user details are available
+        user = auth.authenticate(username=username, password=password)
+        
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, 'Login successful.')
+            return redirect('/')
+        else:
+            messages.error(request, 'Invalid username or password. Please try again.')
+            return redirect('login')
+    else:
+        return render(request, 'login.html')

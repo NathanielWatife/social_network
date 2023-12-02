@@ -31,7 +31,7 @@
 						{% for message in messages %}
 							<h4 class="widget-title">Who's follownig</h4>
 						{% endfor %}
-						<form method="post">
+						<form action="" method="post">
 							{% csrf_token %}
 							<!-- username -->
 							<div class="form-group">	
@@ -59,9 +59,7 @@
 	</div>
 </div>
 	
-	<!-- <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">	 -->
-	<script src="{% static 'js/main.min.js' %}"></script>
-	<script src="{% static 'js/script.js' %}"></script>
+
 
 </body>	
 
