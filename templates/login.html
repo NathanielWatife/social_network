@@ -28,10 +28,11 @@
 				<div class="login-reg-bg">
 					<div class="log-reg-area sign">
 						<h2 class="log-title">Login</h2>
-						{% for message in messages %}
-							<h4 class="widget-title">Who's follownig</h4>
-						{% endfor %}
+						
 						<form action="" method="post">
+							{% for message in messages %}
+								<h4 class="widget-title">{{ message }}</h4>
+							{% endfor %}
 							{% csrf_token %}
 							<!-- username -->
 							<div class="form-group">	
